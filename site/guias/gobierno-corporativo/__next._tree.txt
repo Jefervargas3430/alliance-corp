@@ -1,0 +1,6 @@
+:HL["/_next/static/css/f1c4179c27b01405.css","style"]
+:HL["/images/sociedades.jpg","image"]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"slug","t":"d","k":"gobierno-corporativo","s":[]},"h":65632,"c":"$Q3"}]]
+1:[["children",{"s":"guias","h":131168,"c":"$Q2"}]]
+0:{"b":"N2RSJnCq8K0jFkI9ugb6d","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}

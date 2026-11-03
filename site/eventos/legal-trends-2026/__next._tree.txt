@@ -1,0 +1,6 @@
+:HL["/_next/static/css/f1c4179c27b01405.css","style"]
+:HL["/images/ciudad.jpg","image"]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":"legal-trends-2026","h":96,"c":"$Q3"}]]
+1:[["children",{"s":"eventos","h":96,"c":"$Q2"}]]
+0:{"b":"N2RSJnCq8K0jFkI9ugb6d","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

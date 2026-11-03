@@ -1,0 +1,5 @@
+:HL["/_next/static/css/f1c4179c27b01405.css","style"]
+:HL["/images/sociedades.jpg","image"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"nosotros","h":96,"c":"$Q2"}]]
+0:{"b":"N2RSJnCq8K0jFkI9ugb6d","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
