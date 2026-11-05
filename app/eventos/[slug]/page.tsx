@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
 import Link from "next/link";
+import { recurso } from "@/lib/rutas";
 import { notFound } from "next/navigation";
 import { buscarEvento, eventos } from "@/data/eventos";
 
@@ -59,7 +60,7 @@ export default async function EventoDetalle({ params }: Props) {
             <span>{evento.modalidad.toUpperCase()}</span>
           </div>
         </div>
-        <img src={evento.imagen} alt={evento.imagenAlt} />
+        <img src={recurso(evento.imagen)} alt={evento.imagenAlt} />
       </section>
 
       <section className="container section event-detail-grid">

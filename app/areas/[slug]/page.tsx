@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { recurso } from "@/lib/rutas";
 import { notFound } from "next/navigation";
 import { areas, buscarArea } from "@/data/areas";
 import { eventosDelArea } from "@/data/eventos";
@@ -40,7 +41,7 @@ export default async function AreaDetalle({ params }: Props) {
           <h1>{area.titulo}</h1>
           <p>{area.bajada}</p>
         </div>
-        <img src={area.imagen} alt={area.imagenAlt} />
+        <img src={recurso(area.imagen)} alt={area.imagenAlt} />
       </section>
 
       <section className="container section area-description">

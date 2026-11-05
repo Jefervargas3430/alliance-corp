@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Link from "next/link";
+import { recurso } from "@/lib/rutas";
 import type { Area } from "@/data/areas";
 import type { Guia } from "@/data/guias";
 import type { Evento } from "@/data/eventos";
@@ -10,7 +11,7 @@ export function TarjetaArea({ area }: { area: Area }) {
   return (
     <Link className={`area-card area-${area.slug}`} href={`/areas/${area.slug}/`}>
       <div className="area-image">
-        <img src={area.imagen} alt="" loading="lazy" />
+        <img src={recurso(area.imagen)} alt="" loading="lazy" />
         <span>{area.numero}</span>
       </div>
       <div className="area-caption">
@@ -44,7 +45,7 @@ export function TarjetaLectura({ guia }: { guia: Guia }) {
   return (
     <Link className="reading-card" href={`/guias/${guia.slug}/`}>
       <div className="reading-image">
-        <img src={guia.portada} alt="" loading="lazy" />
+        <img src={recurso(guia.portada)} alt="" loading="lazy" />
       </div>
       <div className="reading-body">
         <span className="eyebrow">{area?.etiquetaCorta} · GUÍA</span>

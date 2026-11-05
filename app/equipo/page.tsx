@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { recurso } from "@/lib/rutas";
 import { IntroPagina } from "@/components/tarjetas";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function Equipo() {
       <section className="container section about-grid">
         <img
           className="team-image"
-          src="/images/sociedades.jpg"
+          src={recurso("/images/sociedades.jpg")}
           alt="Collage de personas conectadas con una organización"
         />
         <div className="prose">

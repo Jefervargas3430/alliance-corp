@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { recurso } from "@/lib/rutas";
 import { notFound } from "next/navigation";
 import { buscarGuia, guias } from "@/data/guias";
 import { buscarArea } from "@/data/areas";
@@ -49,7 +50,7 @@ export default async function GuiaDetalle({ params }: Props) {
         </aside>
 
         <article className="article-body">
-          {guia.portada && <img className="article-cover" src={guia.portada} alt="" />}
+          {guia.portada && <img className="article-cover" src={recurso(guia.portada)} alt="" />}
 
           {guia.secciones.map((seccion) => (
             <section key={seccion.id} id={seccion.id}>

@@ -1,0 +1,57 @@
+name: Publicar en GitHub Pages
+
+# Cada push a esta rama reconstruye el sitio y lo publica.
+# También se puede lanzar a mano desde la pestaña Actions.
+on:
+  push:
+    branches: [nextjs-rebuild, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Si llegan dos pushes seguidos, termina el último y cancela el anterior.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Construir el sitio estático
+        # El sitio vive en jefervargas3430.github.io/alliance-corp/, no en la
+        # raíz del dominio, así que las rutas llevan ese prefijo.
+        env:
+          NEXT_PUBLIC_BASE_PATH: /alliance-corp
+        run: npm run build
+
+      - name: Evitar que GitHub Pages ignore las carpetas _next
+        run: touch out/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { recurso } from "@/lib/rutas";
 import { areas } from "@/data/areas";
 import { guias } from "@/data/guias";
 import { eventosArchivados } from "@/data/eventos";
@@ -12,7 +13,7 @@ export default function Inicio() {
       <section className="home-hero">
         <div className="hero-art">
           <img
-            src="/images/ciudad.jpg"
+            src={recurso("/images/ciudad.jpg")}
             alt="Collage de edificios en amarillo, coral y negro"
             fetchPriority="high"
           />

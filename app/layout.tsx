@@ -3,6 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Newsletter from "@/components/Newsletter";
 import { sitio } from "@/data/sitio";
+import { recurso } from "@/lib/rutas";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s · Alliance Corp",
   },
   description: sitio.descripcion,
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: recurso("/favicon.svg") },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
